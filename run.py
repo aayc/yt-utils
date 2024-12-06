@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing_extensions import Annotated
 import typer
-from llm import gemini_qa
+from llm import gemini_flashcards, gemini_qa
 from utils import download_audio, transcribe_audio, try_cleanup_file, write_anki_compatible_csv
 from rich.progress import Progress, SpinnerColumn, TextColumn
 import warnings
@@ -28,7 +28,7 @@ def make_flashcards(youtube_url: str, output_csv_path: str):
         try_cleanup_file(audio_file_path)
 
         progress.add_task("Calling Google Gemini model...", total=None)
-        flashcards = gemini_qa(transcript)
+        flashcards = gemini_flashcards(transcript)
 
         progress.add_task(f"Writing Anki CSV to {output_csv_path}...", total=None)
         write_anki_compatible_csv(flashcards, output_csv_path)
