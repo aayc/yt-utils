@@ -5,18 +5,12 @@ import yt_dlp
 import whisper
 
 def transcribe_audio(audio_file_path: str) -> str:
-    # Load Whisper model
-    model = whisper.load_model("base")  # You can choose 'tiny', 'base', 'small', 'medium', 'large'
-    
-    # Transcribe audio
+    model = whisper.load_model("base")
     result = model.transcribe(audio_file_path)
     transcript = result['text']
     return transcript
 
 def download_audio(youtube_url: str) -> None:
-    # Downloads audio from a YouTube video using youtube-dl or yt-dlp
-    # Install yt-dlp: pip install yt-dlp
-
     output_audio_path = str((Path(__file__).parent / "_downloaded_audio").resolve())
 
     ydl_opts = {
