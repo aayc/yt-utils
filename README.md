@@ -22,7 +22,7 @@ A versatile CLI toolkit for learning from YouTube videos, featuring transcriptio
 3. `export GEMINI_API_KEY=<your-api-key>`
 4. `python run.py qa <youtube-url>`
 5. `python run.py transcribe <youtube-url> <output_path>`
-6. `python run.py flashcards <youtube-url> <output_csv_path>`
+6. `python run.py make-flashcards <youtube-url> <output_csv_path>`
 
 ## Tips
 
