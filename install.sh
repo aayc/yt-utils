@@ -11,5 +11,3 @@ pip install -r requirements.txt
 python_location=$(which python)
 echo "Add this alias to your shell configuration for easy access via the yt shortcut:"
 echo "alias yt='$python_location $(pwd)/run.py'"
-
-
