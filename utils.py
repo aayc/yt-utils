@@ -40,4 +40,4 @@ def write_anki_compatible_csv(flashcards: list[dict[str, str]], output_csv_path:
         'Answer': card['answer']
     } for card in flashcards])
     
-    df.to_csv(output_csv_path, index=False, encoding='utf-8')
+    df.to_csv(output_csv_path, index=False, header=False, encoding='utf-8')
